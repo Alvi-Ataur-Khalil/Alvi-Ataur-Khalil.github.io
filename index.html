@@ -2,13 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Hello from GitHub Pages!</title>
-  <style>
-    body { font-family: system-ui, sans-serif; padding: 2rem; text-align: center; }
-  </style>
+  <title>Dr. Alex K.—Assistant Professor, Computer Science</title>
+
+  <!-- ✅ GitHub Pages serves everything over HTTPS; just use absolute https:// URLs for any assets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Homepage of Dr. Alex K., Assistant Professor of Computer Science at Southern Illinois University Carbondale. Research: Blockchain Security, AI/ML, Cyber-Physical Systems.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
+
 <body>
-  <h1>🎉 It works!</h1>
-  <p>Testing: Personal GitHub Pages is alive.</p>
+  <!-- ====== Header + Navigation ====== -->
+  <header>
+    <div class="container flex-row">
+      <h1 class="site-title"><a href="/">Dr. Alex K.</a></h1>
+      <nav id="site-nav">
+        <button class="nav-toggle" aria-label="Menu"></button>
+        <ul class="nav-links">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#students">Students</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="files/AK_CV.pdf" class="button">CV (PDF)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Hero / Intro ====== -->
+  <section class="hero">
+    <div class="container">
+      <img src="assets/img/portrait.jpg" alt="Portrait of Dr. Alex K." class="portrait">
+      <h2>Assistant Professor<br>Department of Computer Science<br>Southern Illinois University Carbondale</h2>
+      <p class="tagline">Building secure, trustworthy, and intelligent cyber-physical systems.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- ====== Research ====== -->
+    <section id="research">
+      <div class="container">
+        <h2>Research Interests</h2>
+        <p>I direct the <strong>TITAN Lab</strong>, where we explore:</p>
+        <ul class="pill-list">
+          <li>Blockchain &amp; Layer-2 Security</li>
+          <li>Adversarial Machine Learning</li>
+          <li>Autonomous UAV Swarms</li>
+          <li>Cyber-Physical Systems Defense</li>
+        </ul>
+        <p>We are always looking for motivated graduate and undergraduate researchers. <a href="#contact">Get in touch!</a></p>
+      </div>
+    </section>
+
+    <!-- ====== Teaching ====== -->
+    <section id="teaching" class="alt">
+      <div class="container">
+        <h2>Teaching</h2>
+        <ul>
+          <li><strong>CS 537&nbsp;— Blockchain Security</strong> (Fall 2025)</li>
+          <li><strong>CS 451&nbsp;— Introduction to Machine Learning</strong> (Spring 2026)</li>
+          <li><strong>CS 651&nbsp;— Advanced Topics in AI for CPS</strong> (Graduate seminar)</li>
+        </ul>
+        <p>Syllabi and slide decks are posted on the <a href="https://siu.instructure.com" target="_blank" rel="noopener">university LMS</a>.</p>
+      </div>
+    </section>
+
+    <!-- ====== Selected Publications ====== -->
+    <section id="publications">
+      <div class="container">
+        <h2>Selected Publications</h2>
+        <ol class="pub-list">
+          <li><strong>“Exploiting RPC Manipulation in Optimistic Rollups.”</strong> <em>IEEE S&amp;P 2025</em>.</li>
+          <li><strong>“FLARE: Federated Learning Attack/Resilience Evaluation.”</strong> <em>NDSS 2024</em>.</li>
+          <li><strong>“SafeSkies: RL-based UAV Swarm Defense.”</strong> <em>Science Robotics</em>, 2023.</li>
+        </ol>
+        <p>Full list on <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      </div>
+    </section>
+
+    <!-- ====== Students ====== -->
+    <section id="students" class="alt">
+      <div class="container">
+        <h2>Students</h2>
+        <h3>Ph.D.</h3>
+        <ul>
+          <li><strong>Jane Doe</strong> — Blockchain Formal Verification</li>
+          <li><strong>John Smith</strong> — Secure Multi-Agent RL</li>
+        </ul>
+
+        <h3>Undergraduates</h3>
+        <ul>
+          <li>Alice Brown — UAV Swarm Visualization Tools</li>
+          <li>Bob Lee — Smart-Contract Fuzzing</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Contact ====== -->
+  <footer id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <address>
+        <p>Engineering Building, Room 312<br>
+           Southern Illinois University<br>
+           Carbondale, IL&nbsp;62901</p>
+        <p><a href="mailto:alex.k@example.edu">alex.k@example.edu</a> ·
+           <a href="tel:+16185550123">+1&nbsp;(618)&nbsp;555-0123</a></p>
+        <p class="social">
+          <a href="https://github.com/yourusername" aria-label="GitHub">GitHub</a> ·
+          <a href="https://twitter.com/yourhandle" aria-label="Twitter">Twitter</a> ·
+          <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn">LinkedIn</a>
+        </p>
+      </address>
+      <p class="copyright">&copy; <span id="year"></span> Dr. Alex K. • All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ====== Tiny JS for mobile nav & year ====== -->
+  <script>
+    document.querySelector('.nav-toggle').onclick = () =>
+      document.querySelector('.nav-links').classList.toggle('open');
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
