@@ -4,14 +4,14 @@
 
 .u-section-1 .u-line-1 {
   transform-origin: left center;
-  margin-top: 1px;
+  margin-top: -5px;
   margin-bottom: 0;
   border-style: double;
 }
 
 .u-section-1 .u-layout-wrap-1 {
   width: 792px;
-  margin: 17px auto 0 calc(((100% - 1140px) / 2)  + -40px);
+  margin: 23px auto 0 calc(((100% - 1140px) / 2)  + -40px);
 }
 
 .u-section-1 .u-layout-cell-1 {
