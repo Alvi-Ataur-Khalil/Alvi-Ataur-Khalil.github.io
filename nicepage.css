@@ -41236,6 +41236,169 @@ a.u-button-style.u-button-style.active > .u-text-active-palette-1-base[class*="u
 a.u-link.u-text-hover-palette-1-base:hover {
   color: #478ac9 !important;
 }
+
+
+
+/* Start Here*/
+
+
+.u-text-palette-1-base-siu,
+.u-input.u-text-palette-1-base-siu,
+.u-input.u-text-palette-1-base-siu[class*="u-border-"],
+li.active > a.u-button-style.u-text-palette-1-base-siu,
+li.active > a.u-button-style.u-text-palette-1-base-siu[class*="u-border-"],
+a.u-button-style.u-text-palette-1-base-siu,
+a.u-button-style.u-text-palette-1-base-siu[class*="u-border-"] {
+  color: #a66984 !important;
+  
+  
+  
+}
+a.u-button-style.u-text-palette-1-base-siu:hover,
+a.u-button-style.u-text-palette-1-base-siu[class*="u-border-"]:hover,
+a.u-button-style.u-text-palette-1-base-siu:focus,
+a.u-button-style.u-text-palette-1-base-siu[class*="u-border-"]:focus,
+a.u-button-style.u-button-style.u-text-palette-1-base-siu:active,
+a.u-button-style.u-button-style.u-text-palette-1-base-siu[class*="u-border-"]:active,
+a.u-button-style.u-button-style.u-text-palette-1-base-siu.active,
+a.u-button-style.u-button-style.u-text-palette-1-base-siu[class*="u-border-"].active {
+  color: #6c0633 !important;
+}
+/* hover */
+a.u-button-style:hover > .u-text-hover-palette-1-base-siu,
+a.u-button-style:hover > .u-text-hover-palette-1-base-siu[class*="u-border-"],
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-siu:hover,
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-siu[class*="u-border-"]:hover,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-siu.active,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-siu[class*="u-border-"].active,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-siu:active,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-siu[class*="u-border-"]:active,
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-siu:focus,
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-siu[class*="u-border-"]:focus,
+:not(.level-2) > .u-nav > .u-nav-item > a.u-nav-link.u-text-hover-palette-1-base-siu:hover,
+.u-text-hover-palette-1-base-siu.u-language-url:hover,
+.u-text-hover-palette-1-base-siu .u-language-url:hover,
+.u-text-hover-palette-1-base-siu.u-carousel-control:hover,
+.u-text-hover-palette-1-base-siu.u-gallery-nav:hover,
+.u-popupmenu-items.u-text-hover-palette-1-base-siu .u-nav-link:hover,
+.u-calendar-time-list .u-calendar-time-slot.u-text-hover-palette-1-base-siu:hover {
+  color: #a66984 !important;
+}
+/* active */
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base:active,
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base[class*="u-border-"]:active,
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base.active,
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base[class*="u-border-"].active,
+a.u-button-style.u-button-style.active > .u-text-active-palette-1-base,
+a.u-button-style.u-button-style.active > .u-text-active-palette-1-base[class*="u-border-"],
+:not(.level-2) > .u-nav > .u-nav-item > a.u-nav-link.u-nav-link.u-text-active-palette-1-base.active,
+.u-popupmenu-items.u-popupmenu-items.u-text-active-palette-1-base .u-nav-link.active,
+.u-calendar-time-list .u-calendar-time-slot.u-text-active-palette-1-base.u-active {
+  color: #a66984 !important;
+}
+.u-text-palette-1-base-siu .u-svg-link {
+  fill: #a66984;
+}
+.u-text-hover-palette-1-base-siu:hover .u-svg-link,
+.u-text-hover-palette-1-base-siu:focus .u-svg-link,
+.u-button-style:hover > .u-text-hover-palette-1-base-siu .u-svg-link {
+  fill: #a66984;
+}
+.u-text-active-palette-1-base:active .u-svg-link.u-svg-link,
+.u-button-style.u-button-style:active > .u-text-active-palette-1-base .u-svg-link,
+.u-button-style.u-button-style.active > .u-text-active-palette-1-base .u-svg-link {
+  fill: #a66984;
+}
+.u-link.u-text-palette-1-base-siu:hover {
+  color: #6c0633 !important;
+}
+a.u-link.u-text-hover-palette-1-base-siu:hover {
+  color: #a66984 !important;
+}
+
+/* End Here */
+
+
+
+/* Start Here*/
+
+
+.u-text-palette-1-base-titan,
+.u-input.u-text-palette-1-base-titan,
+.u-input.u-text-palette-1-base-titan[class*="u-border-"],
+li.active > a.u-button-style.u-text-palette-1-base-titan,
+li.active > a.u-button-style.u-text-palette-1-base-titan[class*="u-border-"],
+a.u-button-style.u-text-palette-1-base-titan,
+a.u-button-style.u-text-palette-1-base-titan[class*="u-border-"] {
+  color: #95d2b4 !important;
+  
+  
+  
+}
+a.u-button-style.u-text-palette-1-base-titan:hover,
+a.u-button-style.u-text-palette-1-base-titan[class*="u-border-"]:hover,
+a.u-button-style.u-text-palette-1-base-titan:focus,
+a.u-button-style.u-text-palette-1-base-titan[class*="u-border-"]:focus,
+a.u-button-style.u-button-style.u-text-palette-1-base-titan:active,
+a.u-button-style.u-button-style.u-text-palette-1-base-titan[class*="u-border-"]:active,
+a.u-button-style.u-button-style.u-text-palette-1-base-titan.active,
+a.u-button-style.u-button-style.u-text-palette-1-base-titan[class*="u-border-"].active {
+  color: #548392 !important;
+}
+/* hover */
+a.u-button-style:hover > .u-text-hover-palette-1-base-titan,
+a.u-button-style:hover > .u-text-hover-palette-1-base-titan[class*="u-border-"],
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-titan:hover,
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-titan[class*="u-border-"]:hover,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-titan.active,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-titan[class*="u-border-"].active,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-titan:active,
+a.u-button-style.u-button-style.u-button-style.u-text-hover-palette-1-base-titan[class*="u-border-"]:active,
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-titan:focus,
+a.u-button-style.u-button-style.u-text-hover-palette-1-base-titan[class*="u-border-"]:focus,
+:not(.level-2) > .u-nav > .u-nav-item > a.u-nav-link.u-text-hover-palette-1-base-titan:hover,
+.u-text-hover-palette-1-base-titan.u-language-url:hover,
+.u-text-hover-palette-1-base-titan .u-language-url:hover,
+.u-text-hover-palette-1-base-titan.u-carousel-control:hover,
+.u-text-hover-palette-1-base-titan.u-gallery-nav:hover,
+.u-popupmenu-items.u-text-hover-palette-1-base-titan .u-nav-link:hover,
+.u-calendar-time-list .u-calendar-time-slot.u-text-hover-palette-1-base-titan:hover {
+  color: #95d2b4 !important;
+}
+/* active */
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base:active,
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base[class*="u-border-"]:active,
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base.active,
+a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-palette-1-base[class*="u-border-"].active,
+a.u-button-style.u-button-style.active > .u-text-active-palette-1-base,
+a.u-button-style.u-button-style.active > .u-text-active-palette-1-base[class*="u-border-"],
+:not(.level-2) > .u-nav > .u-nav-item > a.u-nav-link.u-nav-link.u-text-active-palette-1-base.active,
+.u-popupmenu-items.u-popupmenu-items.u-text-active-palette-1-base .u-nav-link.active,
+.u-calendar-time-list .u-calendar-time-slot.u-text-active-palette-1-base.u-active {
+  color: #95d2b4 !important;
+}
+.u-text-palette-1-base-titan .u-svg-link {
+  fill: #95d2b4;
+}
+.u-text-hover-palette-1-base-titan:hover .u-svg-link,
+.u-text-hover-palette-1-base-titan:focus .u-svg-link,
+.u-button-style:hover > .u-text-hover-palette-1-base-titan .u-svg-link {
+  fill: #95d2b4;
+}
+.u-text-active-palette-1-base:active .u-svg-link.u-svg-link,
+.u-button-style.u-button-style:active > .u-text-active-palette-1-base .u-svg-link,
+.u-button-style.u-button-style.active > .u-text-active-palette-1-base .u-svg-link {
+  fill: #95d2b4;
+}
+.u-link.u-text-palette-1-base-titan:hover {
+  color: #548392 !important;
+}
+a.u-link.u-text-hover-palette-1-base-titan:hover {
+  color: #95d2b4 !important;
+}
+
+/* End Here */
+
 .u-text-palette-2-dark-3,
 .u-input.u-text-palette-2-dark-3,
 .u-input.u-text-palette-2-dark-3[class*="u-border-"],
