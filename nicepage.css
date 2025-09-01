@@ -46629,6 +46629,72 @@ a.u-link.u-text-hover-color-var:hover {
         {
             color: #cef1d0 !important;
         }
+
+        /*start here*/
+        /* hover */
+        a.u-button-style:hover > .u-text-hover-custom-alvi,
+        a.u-button-style:hover > .u-text-hover-custom-alvi[class*="u-border-"],
+        a.u-button-style.u-button-style.u-text-hover-custom-alvi:hover,
+        a.u-button-style.u-button-style.u-text-hover-custom-alvi[class*="u-border-"]:hover,
+        a.u-button-style.u-button-style.u-button-style.u-text-hover-custom-alvi.active,
+        a.u-button-style.u-button-style.u-button-style.u-text-hover-custom-alvi[class*="u-border-"].active,
+        a.u-button-style.u-button-style.u-button-style.u-text-hover-custom-alvi:active,
+        a.u-button-style.u-button-style.u-button-style.u-text-hover-custom-alvi[class*="u-border-"]:active,
+        a.u-button-style.u-button-style.u-text-hover-custom-alvi:focus,
+        a.u-button-style.u-button-style.u-text-hover-custom-alvi[class*="u-border-"]:focus,
+        :not(.level-2) > .u-nav > .u-nav-item > a.u-nav-link.u-text-hover-custom-alvi:hover,
+        .u-text-hover-custom-alvi.u-language-url:hover,
+        .u-text-hover-custom-alvi .u-language-url:hover,
+        .u-text-hover-custom-alvi.u-carousel-control:hover,
+        .u-text-hover-custom-alvi.u-gallery-nav:hover,
+        .u-popupmenu-items.u-text-hover-custom-alvi .u-nav-link:hover,
+        .u-calendar-time-list .u-calendar-time-slot.u-text-hover-custom-alvi:hover
+        {
+            color: #58cf5e !important;
+        }
+
+        /* active */
+        a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-custom-color-2:active,
+        a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-custom-color-2[class*="u-border-"]:active,
+        a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-custom-color-2.active,
+        a.u-button-style.u-button-style.u-button-style.u-button-style.u-text-active-custom-color-2[class*="u-border-"].active,
+        a.u-button-style.u-button-style.active > .u-text-active-custom-color-2,
+        a.u-button-style.u-button-style.active > .u-text-active-custom-color-2[class*="u-border-"],
+        :not(.level-2) > .u-nav > .u-nav-item > a.u-nav-link.u-nav-link.u-text-active-custom-color-2.active,
+        .u-popupmenu-items.u-popupmenu-items.u-text-active-custom-color-2 .u-nav-link.active,
+        .u-calendar-time-list .u-calendar-time-slot.u-text-active-custom-color-2.u-active
+        {
+            color: #58cf5e !important;
+        }
+
+        .u-text-custom-color-2 .u-svg-link {
+            fill: #58cf5e;
+        }
+
+        .u-text-hover-custom-alvi:hover .u-svg-link,
+        .u-text-hover-custom-alvi:focus .u-svg-link,
+        .u-button-style:hover > .u-text-hover-custom-alvi .u-svg-link
+        {
+            fill: #58cf5e;
+        }
+
+        .u-text-active-custom-color-2:active .u-svg-link.u-svg-link,
+        .u-button-style.u-button-style:active > .u-text-active-custom-color-2 .u-svg-link,
+        .u-button-style.u-button-style.active > .u-text-active-custom-color-2 .u-svg-link
+        {
+            fill: #58cf5e;
+        }
+
+        .u-link.u-text-custom-color-2:hover
+        {
+            color: #abe7af !important;
+        }
+
+        a.u-link.u-text-hover-custom-alvi:hover
+        {
+            color: #58cf5e !important;
+        }
+        /*end here*/
         
         
         .u-text-custom-color-3,
