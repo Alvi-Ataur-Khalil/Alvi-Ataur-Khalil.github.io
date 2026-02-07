@@ -114,8 +114,8 @@
   width: 1150px;
   --radius: 10px;
   height: auto;
-  min-height: 126px;
-  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  min-height: 5px;
+  /*box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);*/
   margin: 182px auto 0 calc(((100% - 1140px) / 2)  + -10px);
 }
 
@@ -193,7 +193,7 @@
 }
 
 .u-section-1 .u-accordion-pane-1 {
-  min-height: 775px;
+  min-height: 100px;
   height: auto;
 }
 
@@ -1369,3 +1369,9 @@
     margin-bottom: 11px;
   }
 }
+
+/*.u-section-1 .u-group-2 { 
+  min-height: 0 !important;
+  height: auto !important;
+}*/
+
