@@ -115,7 +115,7 @@
   --radius: 10px;
   height: auto;
   min-height: 5px;
-  /*box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);*/
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
   margin: 182px auto 0 calc(((100% - 1140px) / 2)  + -10px);
 }
 
