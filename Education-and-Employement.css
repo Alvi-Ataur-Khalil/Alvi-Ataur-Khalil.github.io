@@ -184,10 +184,49 @@
   vertical-align: -7px;
 }
 
-.u-section-1 .u-text-6 {
+/* ============================================================ */
+/* EMPLOYMENT ITEMS — logo on left, no box, aligned with Education */
+/* Education boxes are 998px wide and centered (margin: 0 auto).  */
+/* Inside each box, the content area is 909px wide.               */
+/* We match the 998px container width so Employment sits in the   */
+/* same horizontal band as the Education boxes.                   */
+/* ============================================================ */
+.u-section-1 .employment-item {
+  width: 998px;
+  margin: 30px auto 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0;
+}
+
+.u-section-1 .employment-item:first-of-type {
+  margin-top: 30px;
+}
+
+.u-section-1 .employment-logo {
+  flex: 0 0 179px;          /* same image width as Education (u-image-1) */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.u-section-1 .employment-logo img {
+  width: 179px;
+  height: 134px;
+  object-fit: contain;
+}
+
+.u-section-1 .employment-text {
+  flex: 1 1 auto;
+  padding-right: 30px;
+}
+
+.u-section-1 .employment-text p {
   line-height: 2;
   font-weight: 400;
-  margin: 30px 180px 15px;
+  margin: 0;
 }
 
 @media (max-width: 1199px) {
@@ -238,10 +277,8 @@
     height: auto;
   }
 
-  .u-section-1 .u-text-6 {
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-bottom: 30px;
+  .u-section-1 .employment-item {
+    width: 940px;
   }
 }
 
@@ -321,11 +358,18 @@
     min-height: 100px;
   }
 
-  .u-section-1 .u-text-6 {
-    width: auto;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 17px;
+  .u-section-1 .employment-item {
+    width: 720px;
+    gap: 15px;
+  }
+
+  .u-section-1 .employment-logo {
+    flex: 0 0 150px;
+  }
+
+  .u-section-1 .employment-logo img {
+    width: 150px;
+    height: 112px;
   }
 }
 
@@ -436,8 +480,14 @@
     padding-right: 10px;
   }
 
-  .u-section-1 .u-text-6 {
-    margin-bottom: 29px;
+  .u-section-1 .employment-item {
+    width: 540px;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .u-section-1 .employment-text {
+    padding-right: 10px;
   }
 }
 
@@ -553,10 +603,27 @@
     margin-top: 58px;
   }
 
-  .u-section-1 .u-text-6 {
+  /* On very small screens, stack logo above text for Employment */
+  .u-section-1 .employment-item {
     width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 31px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .u-section-1 .employment-logo {
+    flex: 0 0 auto;
+    padding-top: 0;
+  }
+
+  .u-section-1 .employment-logo img {
+    width: 120px;
+    height: auto;
+  }
+
+  .u-section-1 .employment-text {
+    padding: 0 10px;
+    text-align: center;
   }
 }
