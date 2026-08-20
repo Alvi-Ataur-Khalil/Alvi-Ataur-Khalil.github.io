@@ -362,11 +362,89 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; scroll-behavior: auto !important; }
     }
+    /* ============ Mobile hamburger menu ============ */
+/* Hidden by default on desktop */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  /* Show the hamburger button */
+  .nav-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: var(--text);
+    transition: background-color 0.15s;
+  }
+  .nav-toggle-label:hover {
+    background-color: var(--card);
+  }
+  .nav-toggle-label svg {
+    width: 26px;
+    height: 26px;
+  }
+  /* When menu is open, swap to the X icon */
+  .nav-toggle-label .icon-close { display: none; }
+  .nav-toggle:checked ~ .site-header__inner .nav-toggle-label .icon-open { display: none; }
+  .nav-toggle:checked ~ .site-header__inner .nav-toggle-label .icon-close { display: block; }
+
+  /* Header layout: brand on left, hamburger on right */
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  /* Hide the nav by default on mobile, and change its layout to a dropdown */
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+    border-bottom: 1px solid var(--border-soft);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+  .site-nav a {
+    padding: 0.8rem 0.25rem;
+    border-bottom: 1px solid var(--border-soft) !important;
+    border-radius: 0;
+    font-size: 1rem;
+  }
+  .site-nav a:last-child { border-bottom: none !important; }
+  .site-nav a[aria-current="page"] {
+    color: var(--accent-siu);
+    font-weight: 600;
+  }
+
+  /* When checkbox is checked, show the nav */
+  .nav-toggle:checked ~ .site-header__inner .site-nav {
+    display: flex;
+  }
+
+  /* The site-header itself needs relative positioning for the absolute dropdown */
+  .site-header { position: sticky; }
+}
+
+@media (max-width: 520px) {
+  .site-nav a { padding: 0.75rem 0.25rem; font-size: 0.95rem; }
+}
 
     /* ============ Responsive ============ */
     @media (max-width: 960px) {
-      .site-header__inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-      .site-nav { justify-content: flex-start; gap: 1rem 1.25rem; }
       .hero {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -412,8 +490,20 @@
 <body>
 
 <header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="./" aria-label="Alvi Ataur Khalil — Home">ALVI ATAUR KHALIL</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <div class="site-header__inner">
+    <a class="brand" href="./">ALVI ATAUR KHALIL</a>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"/>
+        <line x1="6" y1="18" x2="18" y2="6"/>
+      </svg>
+    </label>
     <nav class="site-nav" aria-label="Primary">
       <a href="./" aria-current="page">Home</a>
       <a href="Publications.html">Publications</a>
@@ -571,8 +661,8 @@
         <details open name="news-year">
           <summary>2026</summary>
           <ul class="news-items">
-            <li><b>[August 2026]</b> Received a $50K award from <b>NSF</b> as the Principal Investigator (PI) for developing and analyzing the potential of <i>Automated AI Reliability Evaluation Tool</i>
-              (Award #<a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2637735" target="_blank" rel="noopener">2637735</a>).</li>
+            <!-- <li><b>[August 2026]</b> Received a $50K award from <b>NSF</b> as the Principal Investigator (PI) for developing and analyzing the potential of <i>Automated AI Reliability Evaluation Tool</i>
+              (Award #<a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2637735" target="_blank" rel="noopener">2637735</a>).</li> -->
             <li><b>[August 2026]</b> Our work on <i>LLM-Split Learning for Heterogeneous surveys</i> is accepted at
               <a href="https://healthcom2026.ieee-healthcom.org/" target="_blank" rel="noopener" class="no-underline">IEEE HealthCom 2026</a>. Congratulations Khalid!</li>
             <li><b>[July 2026]</b> RAG-Narok is accepted at
