@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alvi Ataur Khalil - Publications</title>
+  <title>Alvi Ataur Khalil - Grants and Publications</title>
   <meta name="description" content="Journal papers, US patents, conference papers, and posters by Alvi Ataur Khalil.">
   <link rel="icon" href="images/favicon.png">
 
@@ -160,6 +160,9 @@
       min-width: 2.8rem;
       text-align: center;
     }
+    /* Grant counter */
+    .grant-list li { counter-increment: pub; }
+    .grant-list li::before { content: "G" counter(pub); }
     /* Journal counter */
     .journal-list li { counter-increment: pub; }
     .journal-list li::before { content: "J" counter(pub); }
@@ -350,7 +353,7 @@
     </label>
     <nav class="site-nav" aria-label="Primary">
       <a href="./">Home</a>
-      <a href="Publications.html" aria-current="page">Publications</a>
+      <a href="Publications.html" aria-current="page">Grants and Publications</a>
       <a href="Education-and-Employement.html">Education and Employment</a>
       <a href="Teaching-and-Services.html">Teaching and Services</a>
       <a href="files/Academic_CV_Khalil.pdf" target="_blank" rel="noopener">CV</a>
@@ -361,7 +364,33 @@
 </header>
 
 <main>
-  <hr class="divider">
+  <!-- <hr class="divider"> -->
+    <!-- ============ Grants ============ -->
+  <h2 class="pub-section">Grants</h2>
+  <ol class="pub-list grant-list">
+    <li>
+      <b>NSF I-Corps: Automated AI Reliability Evaluation Tool</b>
+      (Award <a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2637735" target="_blank" rel="noopener">#2637735</a>).
+      Received a $50,000 award from NSF for developing and analyzing the potential of an Automated AI
+      Reliability Evaluation Tool.
+      Role: <b>Principal Investigator (PI)</b>. Year: 2026.
+    </li>
+    
+    
+    <li>
+      <b>NSF NAIRR Pilot Resource Grant</b>
+      (Award <a href="https://nairrpilot.org/projects/awarded?_requestNumber=NAIRR260054" target="_blank" rel="noopener">#NAIRR260054</a>).
+      Awarded 10,000 GPU-hours on NCSA Delta to support research on trustworthy AI systems.
+      Role: <b>Principal Investigator (PI)</b>. Year: 2026.
+    </li>
+    <li>
+      <b>New Faculty Startup Research Fund</b>, Southern Illinois University Carbondale.
+      Jointly funded by the Office of the Vice Chancellor for Research (VCR),
+      the College of Engineering, Computing, Technology, and Mathematics (ECTM),
+      and the School of Computing (SoC).
+      Role: <b>Principal Investigator (PI)</b>.
+    </li>
+  </ol>
 
   <!-- ============ Journal Papers ============ -->
   <h2 class="pub-section">Journal Papers</h2>
