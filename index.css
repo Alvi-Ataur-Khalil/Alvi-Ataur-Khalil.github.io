@@ -1375,3 +1375,34 @@
   height: auto !important;
 }*/
 
+
+/* --- Fix: prevent expanded News & Events accordion from pushing the left column down. ---
+   Only applies at ≥992px viewports where the layout is two-column.
+   The tablet / mobile stacked layout (≤991px) is intentionally left alone —
+   there Contact Info should stack below the accordion. */
+@media (min-width: 992px) {
+  .u-section-1 {
+    position: relative;
+  }
+  .u-section-1 .u-group-2 {
+    position: absolute;
+    top: 299px;                                            /* matches its previous natural top (308 - 9 margin) */
+    right: calc(((100% - 1140px) / 2));
+    margin: 9px 0 0 0;                                     /* preserve visual 9px offset from top */
+    min-height: 0;                                         /* let it grow with content, no forced 1120px */
+  }
+  .u-section-1 .u-text-13 {
+    margin-top: 550px;                                     /* was -570px; left column now flows without the accordion above it */
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .u-section-1 .u-group-2 {
+    top: 299px;
+    right: calc(((100% - 940px) / 2));
+    margin: 11px 0 0 0;
+  }
+  .u-section-1 .u-text-13 {
+    margin-top: 550px;                                     /* was -427px; recomputed for absolute accordion */
+  }
+}
