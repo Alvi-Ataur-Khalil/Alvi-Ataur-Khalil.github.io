@@ -97,180 +97,201 @@
       color: var(--text);
     }
 
-    main { max-width: var(--container); margin: 0 auto; padding: 1.5rem 1.5rem 0; }
+    .nav-toggle,
+    .nav-toggle-label { display: none; }
+
+    main { max-width: var(--container); margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
     .divider {
       border: 0;
       border-top: 3px double var(--border);
       margin: 0 0 2rem;
     }
 
-    /* Section headers with icon */
+    /* ============ Section header ============ */
     .section-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.5rem;
       color: var(--heading);
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin: 2rem 0 1.5rem;
-    }
-    .section-header__icon {
-      width: 34px;
-      height: 34px;
-      flex-shrink: 0;
-      object-fit: contain;
+      margin: 2.5rem 0 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--accent-siu);
     }
     .section-header:first-of-type { margin-top: 0.5rem; }
+    .section-header__icon {
+      width: 34px; height: 34px; flex-shrink: 0; object-fit: contain;
+    }
 
-    /* Education cards — logo on left, text on right, rounded box with shadow */
-    .edu-card {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      align-items: center;
-      gap: 1.5rem;
+    /* ============ Timeline ============ */
+    .timeline {
+      position: relative;
+      padding-left: 170px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 152px;
+      top: 1.6rem;
+      bottom: 1.6rem;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--border) 0%, var(--border-soft) 100%);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 1.6rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
       background: #fff;
-      border-radius: 20px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border: 3px solid var(--accent-siu);
+      box-shadow: 0 0 0 3px #fff;
+      z-index: 2;
+    }
+    .timeline-item.current::before {
+      background: var(--accent-titan);
+      border-color: var(--accent-titan);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(10, 157, 144, 0.25); }
+      50%      { box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(10, 157, 144, 0.10); }
+    }
+
+    /* Date column — both start and end bold, single line each */
+    .timeline-date {
+      position: absolute;
+      left: -165px;
+      top: 1.35rem;
+      width: 135px;
+      text-align: right;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--accent-siu);
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+    .timeline-date .end {
+      display: block;
+      color: var(--accent-siu);
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-top: 0.05rem;
+    }
+    .timeline-date .dash {
+      display: block;
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 0.6;
+      margin: 0.05rem 0;
+    }
+    .timeline-item.current .timeline-date,
+    .timeline-item.current .timeline-date .end {
+      color: var(--accent-titan);
+    }
+
+    .timeline-card {
+      background: #fff;
       border: 1px solid var(--border-soft);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.045);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
     }
-    .edu-card:hover {
+    .timeline-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     }
-    .edu-card__logo {
+    .timeline-item.current .timeline-card {
+      border-color: rgba(10, 157, 144, 0.3);
+      background: linear-gradient(to right, rgba(10, 157, 144, 0.04) 0%, #fff 40%);
+    }
+    .timeline-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 130px;
+      min-height: 90px;
     }
-    .edu-card__logo img {
+    .timeline-logo img {
       max-width: 100%;
-      max-height: 130px;
       object-fit: contain;
     }
-    .edu-card__text {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      line-height: 1.65;
-    }
-    .edu-card__institution {
+    .timeline-content { font-family: var(--font-serif); line-height: 1.55; }
+    .timeline-role {
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--heading);
       display: block;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
-    .edu-card__location {
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.98rem;
-    }
-    .edu-card__degree {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .edu-card__dates {
-      display: block;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      margin-top: 0.15rem;
-    }
-
-    /* Employment section — no boxes, logo left, prose right */
-    .emp-header {
-      background: linear-gradient(135deg, #3a3d4a 0%, #454655 100%);
+    .timeline-current-badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      background: var(--accent-titan);
       color: #fff;
-      padding: 1.4rem 1rem;
-      margin: 3rem 0 2rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .emp-header .section-header {
-      color: #fff;
-      margin: 0;
-      justify-content: center;
-    }
-    .emp-header .section-header__icon {
-      /* subtle white glow so darker icons still read */
-      filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
-    }
-
-    .emp-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 1.75rem;
-      align-items: start;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border-soft);
-    }
-    .emp-item:last-child { border-bottom: none; }
-    .emp-logo {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 0.35rem;
-    }
-    .emp-logo img {
-      max-width: 100%;
-      max-height: 120px;
-      object-fit: contain;
-    }
-    .emp-text {
-      font-family: var(--font-serif);
-      line-height: 1.75;
-    }
-    .emp-role {
+      border-radius: 999px;
       font-family: var(--font-display);
+      font-size: 0.7rem;
       font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--heading);
-      display: block;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      vertical-align: 0.25em;
+      margin-left: 0.5rem;
     }
-    .emp-place {
+    .timeline-institution {
       font-size: 1rem;
       color: var(--text);
       display: block;
       margin-bottom: 0.15rem;
+      font-weight: 600;
     }
-    .emp-dates {
-      font-size: 0.92rem;
+    .timeline-context {
+      font-size: 0.93rem;
       color: var(--text-muted);
       display: block;
-      margin-bottom: 0.75rem;
-      font-style: italic;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
     }
-    .emp-highlights {
+    .timeline-highlights {
+      margin-top: 0.5rem;
+      font-size: 0.94rem;
       list-style: none;
       padding: 0;
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--text);
     }
-    .emp-highlights li {
-      padding-left: 1.1rem;
+    .timeline-highlights li {
+      padding-left: 1.15rem;
       position: relative;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
       text-align: justify;
       hyphens: auto;
+      line-height: 1.55;
     }
-    .emp-highlights li::before {
-      content: '•';
+    .timeline-highlights li::before {
+      content: '›';
       position: absolute;
-      left: 0.15rem;
-      top: 0;
+      left: 0.1rem;
+      top: -0.05em;
       color: var(--accent-titan);
       font-weight: 700;
+      font-size: 1.05rem;
     }
 
     /* Footer */
@@ -283,14 +304,14 @@
       margin-top: 4rem;
     }
 
-    a:focus-visible {
+    a:focus-visible, label:focus-visible {
       outline: 2px solid var(--focus-ring);
       outline-offset: 3px;
       border-radius: 2px;
     }
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; scroll-behavior: auto !important; }
-      .edu-card:hover { transform: none; }
+      .timeline-item.current::before { animation: none; }
     }
 
     main a[href*="siu.edu"]:not(.site-nav a) {
@@ -303,112 +324,91 @@
     }
 
     /* ============ Mobile hamburger menu ============ */
-/* Hidden by default on desktop */
-.nav-toggle,
-.nav-toggle-label {
-  display: none;
-}
-
-@media (max-width: 960px) {
-  /* Show the hamburger button */
-  .nav-toggle-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 6px;
-    color: var(--text);
-    transition: background-color 0.15s;
-  }
-  .nav-toggle-label:hover {
-    background-color: var(--card);
-  }
-  .nav-toggle-label svg {
-    width: 26px;
-    height: 26px;
-  }
-  /* When menu is open, swap to the X icon */
-  .nav-toggle-label .icon-close { display: none; }
-  .nav-toggle:checked ~ .site-header__inner .nav-toggle-label .icon-open { display: none; }
-  .nav-toggle:checked ~ .site-header__inner .nav-toggle-label .icon-close { display: block; }
-
-  /* Header layout: brand on left, hamburger on right */
-  .site-header__inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-
-  /* Hide the nav by default on mobile, and change its layout to a dropdown */
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0.5rem 1rem 1rem;
-    border-bottom: 1px solid var(--border-soft);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  }
-  .site-nav a {
-    padding: 0.8rem 0.25rem;
-    border-bottom: 1px solid var(--border-soft) !important;
-    border-radius: 0;
-    font-size: 1rem;
-  }
-  .site-nav a:last-child { border-bottom: none !important; }
-  .site-nav a[aria-current="page"] {
-    color: var(--accent-siu);
-    font-weight: 600;
-  }
-
-  /* When checkbox is checked, show the nav */
-  .nav-toggle:checked ~ .site-header__inner .site-nav {
-    display: flex;
-  }
-
-  /* The site-header itself needs relative positioning for the absolute dropdown */
-  .site-header { position: sticky; }
-}
-
-@media (max-width: 520px) {
-  .site-nav a { padding: 0.75rem 0.25rem; font-size: 0.95rem; }
-}
-
     @media (max-width: 960px) {
+      .nav-toggle-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 6px;
+        color: var(--text);
+        transition: background-color 0.15s;
+      }
+      .nav-toggle-label:hover { background-color: var(--card); }
+      .nav-toggle-label svg { width: 26px; height: 26px; }
+      .nav-toggle-label .icon-close { display: none; }
+      .nav-toggle:checked ~ .site-header__inner .nav-toggle-label .icon-open { display: none; }
+      .nav-toggle:checked ~ .site-header__inner .nav-toggle-label .icon-close { display: block; }
 
+      .site-header__inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 1rem;
+      }
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 1rem 1rem;
+        border-bottom: 1px solid var(--border-soft);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      }
+      .site-nav a {
+        padding: 0.8rem 0.25rem;
+        border-bottom: 1px solid var(--border-soft) !important;
+        border-radius: 0;
+        font-size: 1rem;
+      }
+      .site-nav a:last-child { border-bottom: none !important; }
+      .site-nav a[aria-current="page"] {
+        color: var(--accent-siu);
+        font-weight: 600;
+      }
+      .nav-toggle:checked ~ .site-header__inner .site-nav {
+        display: flex;
+      }
     }
-    @media (max-width: 720px) {
-      .edu-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1rem;
-        padding: 1.25rem;
-      }
-      .edu-card__logo { min-height: 0; }
-      .edu-card__logo img { max-height: 100px; }
 
-      .emp-item {
+    /* Timeline collapse on mobile */
+    @media (max-width: 720px) {
+      .timeline { padding-left: 24px; }
+      .timeline::before { left: 6px; }
+      .timeline-item::before { left: -22px; top: 1rem; }
+      .timeline-date {
+        position: static;
+        width: auto;
+        text-align: left;
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      .timeline-date .end,
+      .timeline-date .dash { display: inline; margin: 0; font-size: 0.85rem; line-height: inherit; }
+      .timeline-card {
         grid-template-columns: 1fr;
         gap: 1rem;
-        text-align: center;
+        padding: 1.15rem 1.15rem 1.25rem;
       }
-      .emp-logo { padding-top: 0; }
-      .emp-logo img { max-height: 90px; }
-      .emp-highlights li { text-align: left; }
+      .timeline-logo { justify-content: flex-start; min-height: 0; }
+      .timeline-logo img { max-height: 75px !important; }
     }
     @media (max-width: 520px) {
       .site-header { padding: 0.9rem 1rem; }
       main { padding: 1rem; }
       .section-header { font-size: 1.25rem; }
+      .site-nav a { padding: 0.75rem 0.25rem; font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -416,8 +416,8 @@
 <body>
 
 <header class="site-header">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <div class="site-header__inner">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+  <div class="site-header__inner">
     <a class="brand" href="./">ALVI ATAUR KHALIL</a>
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -451,129 +451,156 @@
     Education
   </h2>
 
-  <article class="edu-card">
-    <div class="edu-card__logo">
-      <img src="images/FIULogo_V_CMYK.jpg" alt="Florida International University" style="max-height: 80px;">
-    </div>
-    <div class="edu-card__text">
-      <span class="edu-card__institution">Florida International University (FIU)</span>
-      <span class="edu-card__location">Miami, FL, USA</span>
-      <span class="edu-card__degree">Ph.D. in Electrical and Computer Engineering</span>
-      <span class="edu-card__dates">Fall 2020 – Summer 2025</span>
-    </div>
-  </article>
+  <div class="timeline">
 
-  <article class="edu-card">
-    <div class="edu-card__logo">
-      <img src="images/FIULogo_V_CMYK.jpg" alt="Florida International University" style="max-height: 80px;">
-    </div>
-    <div class="edu-card__text">
-      <span class="edu-card__institution">Florida International University (FIU)</span>
-      <span class="edu-card__location">Miami, FL, USA</span>
-      <span class="edu-card__degree">M.S. in Computer Engineering</span>
-      <span class="edu-card__dates">Fall 2020 – Summer 2024</span>
-    </div>
-  </article>
+    <article class="timeline-item">
+      <div class="timeline-date">Summer 2025<span class="dash"><br>|<br><br></span><span class="end">Fall 2020</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/FIULogo_V_CMYK.jpg" alt="Florida International University" style="max-height: 80px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">Ph.D. in Electrical and Computer Engineering</span>
+          <span class="timeline-institution">Florida International University (FIU)</span>
+          <span class="timeline-context">Miami, FL, USA</span>
+        </div>
+      </div>
+    </article>
 
-  <article class="edu-card">
-    <div class="edu-card__logo">
-      <img src="images/Logo_KUET.svg" alt="Khulna University of Engineering and Technology" style="max-height: 90px;">
-    </div>
-    <div class="edu-card__text">
-      <span class="edu-card__institution">Khulna University of Engineering and Technology (KUET)</span>
-      <span class="edu-card__location">Khulna, Bangladesh</span>
-      <span class="edu-card__degree">B.Sc. in Computer Science and Engineering</span>
-      <span class="edu-card__dates">April 2014 – February 2018</span>
-    </div>
-  </article>
+    <article class="timeline-item">
+      <div class="timeline-date">Summer 2024<span class="dash"><br>|<br><br></span><span class="end">Fall 2020</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/FIULogo_V_CMYK.jpg" alt="Florida International University" style="max-height: 80px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">M.S. in Computer Engineering</span>
+          <span class="timeline-institution">Florida International University (FIU)</span>
+          <span class="timeline-context">Miami, FL, USA</span>
+        </div>
+      </div>
+    </article>
 
-  <!-- ============ Employment ============ -->
-  <div class="emp-header">
-    <h2 class="section-header">
-      <img class="section-header__icon" src="images/5517030.png" alt="">
-      Employment
-    </h2>
+    <article class="timeline-item">
+      <div class="timeline-date">February 2018<span class="dash"><br>|<br><br></span><span class="end">April 2014</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/Logo_KUET.svg" alt="Khulna University of Engineering and Technology" style="max-height: 90px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">B.Sc. in Computer Science and Engineering</span>
+          <span class="timeline-institution">Khulna University of Engineering and Technology (KUET)</span>
+          <span class="timeline-context">Khulna, Bangladesh</span>
+        </div>
+      </div>
+    </article>
+
   </div>
 
-  <article class="emp-item">
-    <div class="emp-logo">
-      <img src="images/SIU_Logo.png" alt="Southern Illinois University Carbondale" style="max-height: 110px;">
-    </div>
-    <div class="emp-text">
-      <span class="emp-role">Assistant Professor (Tenure-Track)</span>
-      <span class="emp-place">Computer Science, School of Computing (SoC), Southern Illinois University, Carbondale, Illinois, USA</span>
-      <span class="emp-dates">August 2025 – Present</span>
-      <ul class="emp-highlights">
-        <li>Leading the Transformative Innovation for Trustworthy AI and Network Security (TITANS) Lab.</li>
-        <li>Teaching undergraduate and graduate level courses.</li>
-      </ul>
-    </div>
-  </article>
+  <!-- ============ Employment ============ -->
+  <h2 class="section-header">
+    <img class="section-header__icon" src="images/5517030.png" alt="">
+    Employment
+  </h2>
 
-  <article class="emp-item">
-    <div class="emp-logo">
-      <img src="images/FIULogo_V_CMYK.jpg" alt="Florida International University" style="max-height: 80px;">
-    </div>
-    <div class="emp-text">
-      <span class="emp-role">Graduate Assistant</span>
-      <span class="emp-place">Department of Electrical and Computer Engineering, Florida International University, Miami, Florida, USA</span>
-      <span class="emp-dates">August 2020 – July 2025</span>
-      <ul class="emp-highlights">
-        <li>Collaborated and made substantive contributions to 1 NSF project, 1 NSA project, and 1 DOE project.</li>
-        <li>Articulated defense mechanisms against cyber attacks on off-chain L2 solutions for blockchain.</li>
-        <li>Designed intelligent navigation for military drones/UAVs in hostile territory using reinforcement learning.</li>
-        <li>Articulated deep learning-based energy harvesting models for IoT devices using cell-free massive MIMOs and intelligent reflecting surfaces.</li>
-        <li>Mentored 7 undergraduate and graduate researchers supported by NSF/NSA/DOE projects.</li>
-      </ul>
-    </div>
-  </article>
+  <div class="timeline">
 
-  <article class="emp-item">
-    <div class="emp-logo">
-      <img src="images/MazeGeek_Logo.png" alt="MazeGeek Technologies" style="max-height: 80px;">
-    </div>
-    <div class="emp-text">
-      <span class="emp-role">Software Developer</span>
-      <span class="emp-place">MazeGeek Technologies BD Ltd., Dhaka, Bangladesh</span>
-      <span class="emp-dates">August 2018 – July 2019</span>
-      <ul class="emp-highlights">
-        <li>Developed and launched 5 Android applications that collectively achieved over 1,000 downloads, enhancing user engagement by 15% within the first six months of release.</li>
-        <li>Designed robust project architectures that streamlined application functionality, resulting in a 10% reduction in development time and improved performance.</li>
-        <li>Managed client requirements and documentation, ensuring 100% adherence to project specifications and timelines.</li>
-        <li>Participated in key client meetings, fostering relationships and securing 2 new contracts through effective communication and project presentations.</li>
-      </ul>
-    </div>
-  </article>
+    <article class="timeline-item current">
+      <div class="timeline-date">Present &nbsp;<span class="dash"><br>|<br><br></span><span class="end">August 2025</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/SIU_Logo.png" alt="Southern Illinois University" style="max-height: 110px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">Assistant Professor (Tenure-Track)<span class="timeline-current-badge">Current</span></span>
+          <span class="timeline-institution">Southern Illinois University, Carbondale</span>
+          <span class="timeline-context">Computer Science, School of Computing · Carbondale, IL, USA</span>
+          <ul class="timeline-highlights">
+            <li>Leading the Transformative Innovation for Trustworthy AI and Network Security (TITANS) Lab.</li>
+            <li>Teaching undergraduate and graduate level courses.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
 
-  <article class="emp-item">
-    <div class="emp-logo">
-      <img src="images/DIU_Logo.png" alt="Daffodil International University" style="max-height: 90px;">
-    </div>
-    <div class="emp-text">
-      <span class="emp-role">Lecturer</span>
-      <span class="emp-place">Department of Computer Science and Engineering, Daffodil International University (DIU), Dhaka, Bangladesh</span>
-      <span class="emp-dates">May 2018 – June 2018</span>
-      <ul class="emp-highlights">
-        <li>Conducted classes and lab sessions for over 60 students in Artificial Intelligence (CSE 412 &amp; 413), achieving a 90% student satisfaction rating through engaging instructional methods.</li>
-        <li>Implemented hands-on projects that improved student proficiency in GUI development, resulting in 80% of students completing practical assignments on time.</li>
-      </ul>
-    </div>
-  </article>
+    <article class="timeline-item">
+      <div class="timeline-date">July 2025<span class="dash"><br>|<br><br></span><span class="end">August 2020</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/FIULogo_V_CMYK.jpg" alt="Florida International University" style="max-height: 80px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">Graduate Assistant</span>
+          <span class="timeline-institution">Florida International University</span>
+          <span class="timeline-context">Department of Electrical and Computer Engineering · Miami, FL, USA</span>
+          <ul class="timeline-highlights">
+            <li>Collaborated and made substantive contributions to 1 NSF project, 1 NSA project, and 1 DOE project.</li>
+            <li>Articulated defense mechanisms against cyber attacks on off-chain L2 solutions for blockchain.</li>
+            <li>Designed intelligent navigation for military drones/UAVs in hostile territory using reinforcement learning.</li>
+            <li>Articulated deep learning-based energy harvesting models for IoT devices using cell-free massive MIMOs and intelligent reflecting surfaces.</li>
+            <li>Mentored 7 undergraduate and graduate researchers supported by NSF/NSA/DOE projects.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
 
-  <article class="emp-item">
-    <div class="emp-logo">
-      <img src="images/IPVision_Logo.png" alt="IP Vision Canada" style="max-height: 90px;">
-    </div>
-    <div class="emp-text">
-      <span class="emp-role">Software Developer Intern</span>
-      <span class="emp-place">IP Vision, Canada Inc., Dhaka, Bangladesh</span>
-      <span class="emp-dates">June 1, 2016 – June 15, 2016</span>
-      <ul class="emp-highlights">
-        <li>Hands-on experience with the QA team.</li>
-        <li>Tested a live project for different GUI layers.</li>
-      </ul>
-    </div>
-  </article>
+    <article class="timeline-item">
+      <div class="timeline-date">July 2019<span class="dash"><br>|<br><br></span><span class="end">August 2018</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/MazeGeek_Logo.png" alt="MazeGeek Technologies" style="max-height: 80px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">Software Developer</span>
+          <span class="timeline-institution">MazeGeek Technologies BD Ltd.</span>
+          <span class="timeline-context">Dhaka, Bangladesh</span>
+          <ul class="timeline-highlights">
+            <li>Developed and launched 5 Android applications that collectively achieved over 1,000 downloads, enhancing user engagement by 15% within the first six months of release.</li>
+            <li>Designed robust project architectures that streamlined application functionality, resulting in a 10% reduction in development time and improved performance.</li>
+            <li>Managed client requirements and documentation, ensuring 100% adherence to project specifications and timelines.</li>
+            <li>Participated in key client meetings, fostering relationships and securing 2 new contracts through effective communication and project presentations.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-item">
+      <div class="timeline-date">June 2018<span class="dash"><br>|<br><br></span><span class="end">May 2018</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/DIU_Logo.png" alt="Daffodil International University" style="max-height: 90px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">Lecturer</span>
+          <span class="timeline-institution">Daffodil International University (DIU)</span>
+          <span class="timeline-context">Department of Computer Science and Engineering · Dhaka, Bangladesh</span>
+          <ul class="timeline-highlights">
+            <li>Conducted classes and lab sessions for over 60 students in Artificial Intelligence (CSE 412 &amp; 413), achieving a 90% student satisfaction rating through engaging instructional methods.</li>
+            <li>Implemented hands-on projects that improved student proficiency in GUI development, resulting in 80% of students completing practical assignments on time.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-item">
+      <div class="timeline-date">June, 2016<span class="dash"><br>|<br><br></span><span class="end">June, 2016</span></div>
+      <div class="timeline-card">
+        <div class="timeline-logo">
+          <img src="images/IPVision_Logo.png" alt="IP Vision Canada Inc." style="max-height: 90px;">
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-role">Software Developer Intern</span>
+          <span class="timeline-institution">IP Vision, Canada Inc.</span>
+          <span class="timeline-context">Dhaka, Bangladesh</span>
+          <ul class="timeline-highlights">
+            <li>Hands-on experience with the QA team.</li>
+            <li>Tested a live project for different GUI layers.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </div>
 
 </main>
 
